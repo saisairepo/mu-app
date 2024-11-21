@@ -1,0 +1,14 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mu-service
+spec:
+  selector:
+    app: mu-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 32700
+  type: ClusterIP
+
