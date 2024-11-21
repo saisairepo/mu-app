@@ -1,8 +1,8 @@
-# deployment.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mu-app
+  namespace: default
 spec:
   replicas: 2
   selector:
@@ -15,6 +15,8 @@ spec:
     spec:
       containers:
       - name: mu-app
-        image: mu-app:v1.0
+        image: ghcr.io/saisairepo/mu-app:v1.0
         ports:
         - containerPort: 80
+      imagePullSecrets:
+      - name: ghcr-registry-secret
