@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new-app
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: new-app
+  template:
+    metadata:
+      labels:
+        app: new-app
+    spec:
+      containers:
+      - name: new-app
+        image: ghcr.io/saisairepo/new-app:v1.0
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+      - name: ghcr-registry-secret
+
