@@ -4,9 +4,11 @@ metadata:
   name: new-service
   namespace: default
 spec:
+  type: NodePort
   ports:
   - port: 80
     targetPort: 80
+    protocol: TCP
+    nodePort: 32701
   selector:
     app: new-app
-  type: ClusterIP
