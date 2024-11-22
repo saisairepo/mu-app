@@ -4,11 +4,11 @@ metadata:
   name: new-service
   namespace: default
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
-  - port: 80
-    targetPort: 4000
-    protocol: TCP
-    nodePort: 32701
+  - port: 80               # The port your service exposes externally
+    targetPort: 4000       # The container port your app listens on
+    protocol: TCP          # Use TCP for HTTP traffic
+    nodePort: 32701        # Optional: Fixed NodePort (still accessible for debugging)
   selector:
-    app: new-app
+    app: new-app           # Matches the 'app' label in your Deployment

@@ -11,18 +11,18 @@ spec:
   - host: mu.local
     http:
       paths:
-      - path: /mu-app
-        pathType: Prefix
-        backend:
-          service:
-            name: mu-service
-            port:
-              number: 80
       - path: /new-app
         pathType: Prefix
         backend:
           service:
             name: new-service
+            port:
+              number: 80
+      - path: /mu-app
+        pathType: Prefix
+        backend:
+          service:
+            name: mu-service
             port:
               number: 80
 
