@@ -7,7 +7,7 @@ spec:
   type: NodePort
   ports:
   - port: 80
-    targetPort: 80
+    targetPort: 4000
     protocol: TCP
     nodePort: 32701
   selector:
