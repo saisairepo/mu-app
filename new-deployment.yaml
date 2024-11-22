@@ -17,7 +17,7 @@ spec:
       - name: new-app
         image: ghcr.io/saisairepo/new-app:v1.0
         ports:
-        - containerPort: 4000
+        - containerPort: 80
       imagePullSecrets:
       - name: ghcr-registry-secret
 
