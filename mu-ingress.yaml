@@ -1,4 +1,3 @@
-
 # ingress.yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -18,6 +17,9 @@ spec:
             name: mu-service
             port:
               number: 80
+  - host: mu.local
+    http:
+      paths:
       - path: /new-app
         pathType: Prefix
         backend:
@@ -25,3 +27,5 @@ spec:
             name: new-service
             port:
               number: 80
+
+
