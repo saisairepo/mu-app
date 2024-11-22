@@ -20,7 +20,7 @@ spec:
   - host: mu.local
     http:
       paths:
-      - path: /new-app
+      - path: /mu-app
         pathType: Prefix
         backend:
           service:
