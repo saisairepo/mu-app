@@ -7,7 +7,7 @@ spec:
   type: LoadBalancer
   ports:
   - port: 80               # The port your service exposes externally
-    targetPort: 4000       # The container port your app listens on
+    targetPort: 80      # The container port your app listens on
     protocol: TCP          # Use TCP for HTTP traffic
     nodePort: 32701        # Optional: Fixed NodePort (still accessible for debugging)
   selector:
