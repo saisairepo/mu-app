@@ -15,9 +15,9 @@ spec:
     spec:
       containers:
       - name: new-app
-        image: ghcr.io/saisairepo/new-app:v1.1
+        image: ghcr.io/saisairepo/new-app:v1.1 # Ensure this image exists
         ports:
         - containerPort: 80
+        imagePullPolicy: Always # Optional: Always attempt to pull the image
       imagePullSecrets:
       - name: ghcr-registry-secret
-

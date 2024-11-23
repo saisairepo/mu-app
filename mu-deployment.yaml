@@ -1,3 +1,7 @@
+
+
+
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -15,8 +19,9 @@ spec:
     spec:
       containers:
       - name: mu-app
-        image: ghcr.io/saisairepo/mu-app:v1.1
+        image: ghcr.io/saisairepo/mu-app:v1.1 # Ensure this image exists
         ports:
         - containerPort: 80
+        imagePullPolicy: Always # Force pull from the registry (optional)
       imagePullSecrets:
       - name: ghcr-registry-secret
