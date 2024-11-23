@@ -4,7 +4,7 @@ metadata:
   name: mu-app
   namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: mu-app
