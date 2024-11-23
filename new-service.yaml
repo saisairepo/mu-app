@@ -2,13 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: new-service
-  namespace: default
 spec:
-  type: LoadBalancer
+  type: NodePort  # Change from ClusterIP to NodePort
   ports:
-  - port: 80               # The port your service exposes externally
-    targetPort: 80      # The container port your app listens on
-    protocol: TCP          # Use TCP for HTTP traffic
-    nodePort: 32701        # Optional: Fixed NodePort (still accessible for debugging)
+    - port: 80
+      targetPort: 80
+      nodePort: 32701  # Specify nodePort here
   selector:
-    app: new-app           # Matches the 'app' label in your Deployment
+    app: new-app
