@@ -1,14 +1,10 @@
-
-
-
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mu-app
   namespace: default
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: mu-app
