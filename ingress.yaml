@@ -13,6 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: your-service-name
+            name: mu-service
             port:
               number: 80
