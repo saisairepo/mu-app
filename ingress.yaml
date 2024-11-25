@@ -16,3 +16,14 @@ spec:
             name: mu-service
             port:
               number: 80
+  - host: 403-error.com
+    http:
+      paths:
+      - path: /mu-app
+        pathType: Prefix
+        backend:
+          service:
+            name: mu-service
+            port:
+              number: 80
+
