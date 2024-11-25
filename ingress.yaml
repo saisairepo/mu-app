@@ -1,29 +1,31 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: newmu-ingress
+  name: multi-app-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: newmu.local
-    http:
-      paths:
-      - path: /mu-app
-        pathType: Prefix
-        backend:
-          service:
-            name: mu-service
-            port:
-              number: 80
-  - host: 403-error.com
-    http:
-      paths:
-      - path: /mu-app
-        pathType: Prefix
-        backend:
-          service:
-            name: mu-service
-            port:
-              number: 80
+    # Route traffic to the first app (saisai)
+    - host: saisai.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: saisai
+                port:
+                  number: 80
 
+    # Route traffic to the second app (mu-app)
+    - host: mu-app.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: mu-service
+                port:
+                  number: 80
