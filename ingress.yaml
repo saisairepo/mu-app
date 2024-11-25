@@ -9,7 +9,7 @@ spec:
   - host: saitesting
     http:
       paths:
-      - path: /
+      - path: /mu-app
         pathType: Prefix
         backend:
           service:
