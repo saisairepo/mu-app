@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: 403-error.com
+  - host: mu-app
     http:
       paths:
       - path: /
