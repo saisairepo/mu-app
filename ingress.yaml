@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-  - host: mu.local
+  - host: newmu.local
     http:
       paths:
       - path: /mu-app
