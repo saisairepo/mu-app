@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: mu-app
-        image: ghcr.io/saisairepo/mu-app:v1.1 # Ensure this image exists
+        image: ghcr.io/saisairepo/mu-app:v1.2 # Ensure this image exists
         ports:
         - containerPort: 3000
         imagePullPolicy: Always # Force pull from the registry (optional)
